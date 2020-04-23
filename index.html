@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/lightbox.min.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Collected Insights</title>
+  </head>
+  <body id="home">
+    <header class="hero">
+      <div id="navbar" class="navbar top">
+        <h1 class="logo">
+          <span class="text-primary"><i class="far fa-lightbulb"></i> Collected</span
+          >Insights
+        </h1>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="https://medium.com/@collectedinsights" target="_">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="content">
+        <h1>Ideas For Life</h1>
+        <p>Providing insights that promote well being</p>
+        <a href="#contact" class="btn"
+          ><i class="fas fa-chevron-right"></i> Stay Connected</a
+        >
+      </div>
+    </header>
+
+    <main>
+      
+      <!-- Showcase -->
+      <section id="about" class="cases flex-grid section-padding">
+        <header class="section-header">
+          <h2>Hello, Friend!</h2>
+          <h4>Welcome to Collected Insights</h4>
+          <div class="p-width">
+          <p>
+            I started this page as a fun project because I wanted a place to catalog some powerful ideas.
+          </p>
+          <p>
+            My intention is to provide thoughtful, meaningful insights into some important, interesting topics like: pyschology, learning, self development, communication, habit/routine building, and more.
+          </p>
+          <p>
+            There's not much here yet, but I intend to keep building it over time.
+          </p>
+          <p>
+            Stay connected with me and I'll keep you in the loop when something cool happens.
+          </p>
+        </div>
+        </header>
+ 
+
+      <!-- Blog -->
+      <section id="blog" class="blog flex-columns flex-reverse">
+        <div class="row">
+          <div class="column">
+            <div class="column-1">
+              <img src="images/home/blog.jpg" alt="" />
+            </div>
+          </div>
+          <div class="column">
+            <div class="column-2 bg-dark">
+              <h4>Hey there!</h4>
+              <h2>Read my words</h2><br>
+              <a href="https://medium.com/@collectedinsights" target="_" class="btn btn-outline">
+                <i class="fas fa-chevron"></i>
+                Here
+              </a>
+            </div>
+          </div>
+          <div class="column">
+            <div class="column-1">
+              <img src="images/IMG_4650.jpg" alt="" />
+            </div>
+          </div>
+          <div class="column" id="contact">
+            <div class="column-2 bg-light">
+              <h2>Keep in touch</h2>
+              <form action="" class="callback-form">
+                <div class="form-control">
+                  <label for="name"></label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Enter name"
+                  />
+                </div>
+                <div class="form-control">
+                  <label for="email"></label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Enter email"
+                  />
+                </div>
+                <p>*No Spam <strong>Ever</strong>*</p>
+                </div>
+                <input type="submit" value="Send it" id="submit" class="btn" />
+              </form>
+              <br>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+    <footer class="footer bg-dark">
+      <div class="social">
+        <a href="https://www.youtube.com/channel/UCTCY_D2KOVYwSWyhzrp1FwA?guided_help_flow=3&disable_polymer=true" target="_"><i class="fab fa-youtube fa-2x"></i></a>
+        <a href="https://www.instagram.com/ryguy770/?hl=en" target="_"><i class="fab fa-instagram fa-2x"></i></a>
+      </div>
+      <p>Copyright &copy; 2020 - Collected Insights</p>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/lightbox.min.js"></script>
+    <script>
+      const navbar = document.getElementById('navbar');
+      let scrolled = false;
+
+      window.onscroll = function () {
+        if (window.pageYOffset > 100) {
+          navbar.classList.remove('top');
+          if (!scrolled) {
+            navbar.style.transform = 'translateY(-70px)';
+          }
+          setTimeout(function () {
+            navbar.style.transform = 'translateY(0)';
+            scrolled = true;
+          }, 200);
+        } else {
+          navbar.classList.add('top');
+          scrolled = false;
+        }
+      };
+
+      // Smooth Scrolling
+      $('#navbar a, .btn').on('click', function (e) {
+        if (this.hash !== '') {
+          e.preventDefault();
+
+          const hash = this.hash;
+
+          $('html, body').animate(
+            {
+              scrollTop: $(hash).offset().top - 100,
+            },
+            800
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
